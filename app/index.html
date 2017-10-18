@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="notes_app">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Notes</title>
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+
+    <ui-view></ui-view>
+
+
+
+    <!-- angularjs -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <!-- angularUI Router -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
+    <!-- FireBase -->
+    <script src="https://www.gstatic.com/firebasejs/4.5.2/firebase.js"></script>
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+    <!-- Initialize Firebase -->
+    <script>
+    var config = {
+        apiKey: "AIzaSyBI9kXQTiXgX1gmtDKH9o75OI2uRjWwFVI",
+        authDomain: "blend-notes-app.firebaseapp.com",
+        databaseURL: "https://blend-notes-app.firebaseio.com",
+        projectId: "blend-notes-app",
+        storageBucket: "",
+        messagingSenderId: "882069860650"
+    };
+    firebase.initializeApp(config);
+    </script>
+
+    <!-- App Files -->
+    <script src="/scripts/app.js"></script>
+</body>
+</html>
