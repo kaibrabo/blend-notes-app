@@ -1,1 +1,27 @@
-<h4>Hello, World???</h4>
+<body ng-controller="HomeCtrl as home">
+    <header>
+        <button class="newNote btn btn-success" ng-click="home.addNote()">
+            <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+            Add Note
+        </button>
+    </header>
+
+    <div class="notes" ng-repeat="note in home.notes">
+        <div class="noteBody">
+            <!-- Note Title -->
+            <span class="noteTitle">
+                    {{ note.$value }}
+                <i class="fa fa-trash newNote" ng-click="home.deleteNote()"></i>
+                <i class="fa fa-pencil newNote" ng-click="home.editNote()"></i>
+            </span>
+            <hr />
+            <!-- Notes Details (list items) -->
+            <ul class="noteDetails" ng-repeat="detail in home.details | filter: {noteId: note.$id}">
+                <li>
+                    {{ detail.detail }}
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</body>

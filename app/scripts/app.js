@@ -15,6 +15,6 @@
     }
 
     angular
-        .module('notes_app', ['ui.router', 'firebase'])
+        .module('notes_app', ['ui.router', 'firebase', 'ui.bootstrap'])
         .config(config);
 })();
