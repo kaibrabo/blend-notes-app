@@ -1,9 +1,15 @@
 (function() {
-    function ModalInstanceCtrl(Note, Detail, $uibModal, $uibModalInstance) {
+    function ModalInstanceCtrl(Note, Detail, $uibModalInstance) {
         this.submit = function() {
-            Note.add(this.addNote.title);
-            Detail.add(this.addDetail.details);
-            $uibModalInstance.close();
+
+            var noteTitle = this.addNote;
+            var detailText = this.addDetail;
+
+            Note.add(noteTitle, function(note) {
+                Detail.add({detail: detailText, noteId: note.key}, function(detail) {
+                    $uibModalInstance.close();
+                });
+            });
         };
 
         this.cancel = function() {
@@ -13,5 +19,5 @@
 
     angular
         .module('notes_app')
-        .controller('ModalInstanceCtrl', ['Note', 'Detail', '$uibModal', '$uibModalInstance', ModalInstanceCtrl]);
+        .controller('ModalInstanceCtrl', ['Note', 'Detail', '$uibModalInstance', ModalInstanceCtrl]);
 })();

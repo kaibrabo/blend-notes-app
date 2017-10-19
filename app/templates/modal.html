@@ -1,27 +1,16 @@
 <section class="modal-box">
-    <div class="modal-header">
-
-        <h3 class="modal-title">New Note</h3>
-<!-- 
-    </div>
-
     <div class="modal-body">
 
-        <h5 class="modal-prompt">Title:</h5>
+        <input id="modalTitle" type="text" name="input" ng-model="modal.addNote" placeholder="Untitled">
 
-        <input type="text" name="input" ng-model="modal.addNote.title">
-
-        <h5 class="modal-prompt">Details:</h5>
-
-        <input type="textarea" name="input" ng-model="modal.addDetail.details">
-
+        <textarea id="modalTextArea" type="textarea" name="input" ng-model="modal.addDetail" placeholder="Just start typing here"></textarea>
     </div>
 
     <div class="modal-footer">
 
-        <button class="btn-new" type="button" ng-click="modal.submit()">New Chat</button>
+        <button class="btn-cancel" type="button" ng-click="modal.cancel()" required>Cancel</button>
+        <button class="btn-new" type="button" ng-click="modal.submit()" required>Add</button>
 
-        <button class="btn-cancel" type="button" ng-click="modal.cancel()">Cancel</button> -->
 
     </div>
 </section>

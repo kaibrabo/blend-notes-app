@@ -7,8 +7,8 @@
 
         Detail.all = details;
 
-        Detail.add = function(detail) {
-            details.$add(detail)
+        Detail.add = function(detail, callback) {
+            details.$add(detail).then(callback);
         }
 
 

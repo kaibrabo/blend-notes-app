@@ -4,25 +4,40 @@
         this.details = Detail.all;
 
         this.addNote = function(){
-			$uibModal.open({
-				templateUrl: '/templates/modal.html',
-				controller: 'ModalInstanceCtrl',
-				controllerAs: 'modal',
-				size: 'sm'
-			}).result.then(function(){}, function(res){});
-            console.log("clicked, no modal tho?");
-		};
-
-        this.editNote = function() {
-            console.log("edit");
+            var modalContent = $uibModal.open({
+                animation: true,
+                ariaLabelledBy: 'modal-box',
+                templateUrl: '/templates/modal.html',
+                controller: 'ModalInstanceCtrl',
+                controllerAs: 'modal',
+                size: 'sm'
+            }).result.then(function () {}, function () {});
         };
 
-        this.deleteNote = function() {
-            console.log("delete");
+        this.editNote = function(note) {
+            console.log("edit");
+            console.log(note);
+            var modalContent = $uibModal.open({
+                animation: true,
+                ariaLabelledBy: 'modal-box',
+                templateUrl: '/templates/modal.html',
+                controller: 'ModalInstanceCtrl',
+                controllerAs: 'modal',
+                size: 'sm',
+                resolve: {addNote: note.$value}
+            });
+        };
+
+        this.updateNote = function() {
+            console.log("update");
+        };
+
+        this.deleteNote = function(note) {
+            this.notes.$remove(note);
         };
     }
 
     angular
-        .module('notes_app')
-        .controller('HomeCtrl', ['Note', 'Detail', '$uibModal', HomeCtrl]);
+    .module('notes_app')
+    .controller('HomeCtrl', ['Note', 'Detail', '$uibModal', HomeCtrl]);
 })();

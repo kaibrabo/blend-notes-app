@@ -6,8 +6,8 @@
 
         Note.all = notes;
 
-        Note.add = function(note) {
-            notes.$add(note)
+        Note.add = function(note, callback) {
+            notes.$add(note).then(callback);
         }
 
         return Note;

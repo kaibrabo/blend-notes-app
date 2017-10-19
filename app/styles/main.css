@@ -1,4 +1,5 @@
-body {
+html {
+    background-color: #eee;
 	width: 100%;
 	font-family: sans-serif;
 }
@@ -9,22 +10,55 @@ header {
 }
 
 .newNote {
+    color: gray;
     float: right;
     margin-top: 10px;
     margin-right: 10px;
 }
 
+i:hover {
+    color: blue;
+}
+
 .notes {
+    background-color: #fff;
     border: 2px solid black;
-    border-top: 8px solid blue;
+    border-top: 8px solid #349;
     border-radius: 5px;
     width: 20%;
     height: 300px;
     float: left;
-    margin: 10px
+    margin: 10px;
 }
 
 .noteTitle {
     padding-left: 5%;
     font-weight: bold;
+}
+
+.noteDetails {
+    padding-left: 5%;
+}
+
+.modal.fade.in {
+    opacity: 1.0;
+}
+
+.modal-backdrop.fade.in {
+    opacity: 0.3;
+}
+
+.modal-box {
+    margin-top: 10%;
+    width: 100%;
+    text-align: left;
+    border-top: 8px solid #349;
+}
+
+.modalTitle {
+    margin-bottom: 20%;
+}
+
+button.btn-cancel {
+    float: left;
 }
