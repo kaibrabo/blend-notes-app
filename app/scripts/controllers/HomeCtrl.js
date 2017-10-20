@@ -23,8 +23,7 @@
                 templateUrl: '/templates/modal.html',
                 controller: 'ModalInstanceCtrl',
                 controllerAs: 'modal',
-                size: 'sm',
-                resolve: {addNote: note.$value}
+                size: 'sm'
             });
         };
 
